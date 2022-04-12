@@ -4,10 +4,11 @@
 不限访问频次
 API文档：
 POST请示
-body：json上传
-{"url":"http://d.tkdan.cn"}
+Content-Type: application/json
+body：{"url":"http://bbs.weiququ.cn"}
+请求接口：http://d.glf2ym.cn/
 得到KEY
-shortUrl:d.tkdan.cn/key
+shortUrl:d.glf2ym.cn/{key}
 有问题联系客服：2072803280
 bbs.weiququ.cn
 
