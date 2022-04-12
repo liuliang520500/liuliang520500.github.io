@@ -19,8 +19,9 @@ let res
     document.getElementById("searchbtn").disabled=false;
 	document.getElementById("searchbtn").innerHTML=' 缩短它';
     if(res.key!=="")
-    document.getElementById("result").innerHTML=window.location.host+res.key;
-    $('#exampleModal').modal('show')
+    // document.getElementById("result").innerHTML=window.location.host+res.key;
+    document.getElementById("tip").innerHTML=window.location.host+res.key;
+    // $('#exampleModal').modal('show')
   }).catch(function(err){alert("未知错误。请重试!");
   document.getElementById("searchbtn").disabled=false;
 	document.getElementById("searchbtn").innerHTML='缩短它';})
@@ -62,7 +63,3 @@ let res
   $(function () {
     $('[data-toggle="popover"]').popover()
   })
-  let notice="短链接用户有效，请勿用于非常跳转，请遵守国家法律法规"
-  if(window.location.host=="5it.me"){
-    document.getElementById("notice").innerHTML=notice
-  }

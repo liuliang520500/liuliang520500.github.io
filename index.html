@@ -118,7 +118,7 @@
         width: 100%;
         height: 70px;
         display: block;
-        position: absolute;
+        /* position: absolute; */
         margin-top: 13px;
     }
     .form-control {
@@ -147,7 +147,7 @@ font-weight: 600;
 line-height: 34px;
 right: 65px;
     }
-    .card-text {
+    .bottom {
         position: absolute;
         width: 100%;
         bottom: 20px;
@@ -182,6 +182,17 @@ color: #3F76FF;
         background-color: #252d38;
       }
     }  */
+
+    #notice{
+      color: white;
+    }
+
+    #tip{
+      color: white;
+      margin-left: 65px;
+      margin-top: 22px;
+      
+    }
   </style>
 </head>
 <body>
@@ -196,10 +207,11 @@ color: #3F76FF;
         <input type="text" class="form-control" placeholder="例如: https://bbs.weiququ.cn/" id="text">
         <button class="btn-cus" type="button" onclick='shorturl()' id="searchbtn">缩短它</button>
       </div>    
-      <div class="card-text">
+      <div class="card-text" id="tip">欢迎使用 !</div>
+      <div class="card-text bottom">
         Powered by <a href="https://d.glf2ym.cn/" target="_blank">TK短网址</a>  <span style="color: #FFEA00;">投诉邮箱：liuliangzheng520@163.com</span>
       </div>
-      <p id="notice">短网址投诉请发送邮箱到：liuliangzheng520@163.com</p>             
+      <p id="notice"></p>             
     </div>
   </div>
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
