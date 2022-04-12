@@ -5,7 +5,13 @@
   <meta http-equiv="content-type" content="txt/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous">
-  <title>Shorter URL</title>
+  <script>
+    if(window.screen.width<=420)
+    document.getElementsByTagName('meta')['viewport'].content="initial-scale=0.4, maximum-scale=1.0, minimum-scale=0.4, user-scalable=no"
+    else if(window.screen.width<=769)
+    document.getElementsByTagName('meta')['viewport'].content="initial-scale=0.6, maximum-scale=1.0, minimum-scale=0.6, user-scalable=no"
+  </script>
+  <title>缩短网址</title>
   <style>
     * {
       margin: 0;
@@ -27,25 +33,125 @@
       align-content: center;
 
       color: #2a2b2c;
-      background-color: #ebedee;
+      background: linear-gradient(180deg, #658FFF 0%, #3670FF 100%);
       overflow: hidden;
     }
     .card {
-      background-color: transparent;
-      width: 768px;
+        width: 830px;
+        height: 420px;
+        background: #231D34;
+        box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.22);
+        border-radius: 44px;
+        border-width: 0;
+        overflow:hidden;
+    }
+    .card-body{
+        padding:0;
+        z-index: 1;
+    }
+    .card .bigtitle{
+        width: 409px;
+        height: 36px;
+        font-size: 36px;
+        font-family: DOUYU-Font, DOUYU;
+        font-weight: normal;
+        color: #FFFFFF;
+        line-height: 40px;
+        margin: 62px 0 0 100px;
+    }
+    .dot1{
+        position:absolute;
+        display:block;
+        left:65px;
+        top: 87px;
+        width: 132px;
+        height: 21px;
+        background: #765CF2;
+        border-radius: 11px;
+        z-index: 1;
+    }
+    .dot2{
+        position:absolute;
+        display:block;
+        top: 345px;
+        left: 500px;
+        width: 378px;
+        height: 378px;
+        background: linear-gradient(180deg, #F6327F 0%, #F9796D 100%);
+        z-index: 1;
+        border-radius: 200px;
+        
+    }
+    .dot3{
+        position:absolute;
+        display:block;
+        top: 317px;
+        left: 590px;
+        width: 378px;
+        height: 378px;
+        background: linear-gradient(180deg, #FFEA00 0%, #FFD100 100%);
+        border-radius: 11px;
+        z-index: 1;
+        border-radius: 200px;
+    }
+    .card-title{
+        display: block;
+        font-size: 28px;
+        font-family: MyriadPro-Regular, MyriadPro;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 34px;
+        margin: 53px 0 0 71px;
+    }
+    
+    .formm{
+        width: 100%;
+        height: 70px;
+        display: block;
+        position: absolute;
+        margin-top: 13px;
+    }
+    .form-control {
+        position: absolute;
+        cursor: auto;
+        width: 700px;
+height: 60px;
+background: #FFFFFF;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+border-radius: 30px;
+margin-left:65px;
+border-width: 0;
+margin-top:5px;
+    }
+    .btn-cus{position: absolute;
+        width: 177px;
+height: 70px;
+background: #644DEF;
+box-shadow: 0px 2px 10px 0px #0E0061;
+border-width: 0;
+border-radius: 40px;
+color: #FFFFFF;
+font-size: 28px;
+font-family: MyriadPro-Semibold, MyriadPro;
+font-weight: 600;
+line-height: 34px;
+right: 65px;
     }
     .card-text {
+        position: absolute;
+        width: 100%;
+        bottom: 20px;
+        margin: 0 auto;
       text-align: center;
+      font-size: 18px;
+color: #3F76FF;
     }
     .card-text > a {
       text-decoration: none;
-      color: #007bff;
+color: #3F76FF;
     }
     .card-text > a {
       cursor: pointer;
-    }
-    .form-control {
-        cursor: auto;
     }
     @media (max-width: 769px) {
       .card {
@@ -57,7 +163,7 @@
         width: 95%;
       }
     }
-    @media (prefers-color-scheme: dark) { 
+    /* @media (prefers-color-scheme: dark) { 
       body {
         color: #d9d9d9; 
         background: #1b1b1b;
@@ -65,22 +171,26 @@
       .card {
         background-color: #252d38;
       }
-    } 
+    }  */
   </style>
 </head>
 <body>
   <div class="card">
-    <h5 class="card-header">🎁 Shorten your URLs !</h5>
+    <span class="dot1"></span>
+    <span class="dot3"></span>
+    <span class="dot2"></span>
+    
     <div class="card-body">
-      <h5 class="card-title">Please enter the long URL to be shortened :</h5>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Example: https://example.com/" id="text">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button" onclick='shorturl()' id="searchbtn">Shorten it</button>
-        </div>
+        
+      <h5 class="bigtitle">缩短你的网址【淘宝客专用】 !</h5>
+      
+      <h5 class="card-title">请输入要缩短的长网址:</h5>
+      <div class="formm">
+        <input type="text" class="form-control" placeholder="例如: https://bbs.weiququ.cn/" id="text">
+        <button class="btn-cus" type="button" onclick='shorturl()' id="searchbtn">缩短它</button>
       </div>    
       <div class="card-text">
-        <a href="https://github.com/xyTom/Url-Shorten-Worker/" target="_self">Fork me on GitHub</a>
+        Powered by <a href="https://bbs.weiququ.cn/" target="_self">微趣趣线报网</a>
       </div>
       <p id="notice"></p>             
     </div>
@@ -89,15 +199,15 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Result</h5>
+          <h5 class="modal-title" id="exampleModalLabel">结果</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body" id="result">No result</div>
+        <div class="modal-body" id="result">没有</div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" onclick='copyurl("result")' data-toggle="popover" data-placement="bottom" data-content="Copied!">Copy</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>    
+          <button type="button" class="btn btn-primary" onclick='copyurl("result")' data-toggle="popover" data-placement="bottom" data-content="Copied!">复制</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>    
         </div>
       </div>
     </div>
