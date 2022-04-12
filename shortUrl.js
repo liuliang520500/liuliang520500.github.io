@@ -20,7 +20,7 @@ let res
 	document.getElementById("searchbtn").innerHTML=' 缩短它';
     if(res.key!=="")
     // document.getElementById("result").innerHTML=window.location.host+res.key;
-    document.getElementById("tip").innerHTML=window.location.host+res.key;
+    document.getElementById("tip").innerHTML=location.protocol + window.location.host+res.key;
     // $('#exampleModal').modal('show')
   }).catch(function(err){alert("未知错误。请重试!");
   document.getElementById("searchbtn").disabled=false;
