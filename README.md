@@ -13,3 +13,8 @@
 11. bbs.weiququ.cn
 12. 油猴安装地址：https://greasyfork.org/zh-CN/scripts/443864-tk%E7%9F%AD%E7%BD%91%E5%9D%80
 
+收藏夹脚本：
+```javascript
+javascript:var xhr=new XMLHttpRequest();xhr.open("POST","https://d.glf2ym.cn/");xhr.setRequestHeader("Content-type","application/json");var data={url:window.location.href};xhr.send(JSON.stringify(data));xhr.onreadystatechange=function(){if(xhr.readyState==4&&xhr.status==200){var res=JSON.parse(xhr.responseText);if(typeof res.key!=="undefined"){prompt("短网址：","https://d.glf2ym.cn"+res.key)}}};
+```
+
